@@ -1,20 +1,18 @@
 # How to compile the KOS toolchain
 
-*This has been testing under Linux Mint 18 on 9/9/2018*
+*The following has been tested under Linux Mint 18 on 9/9/2018*
 
-First, you need to chmod the kos_setup_script.sh
+First, you need to `chmod` the `kos_setup_script.sh` file.
 
-`chmod +x kos_setup_script.sh`
+In a terminal, type `chmod +x kos_setup_script.sh`
 
-then run it using
+then run the script it using `./kos_setup_script.sh`
 
-`./kos_setup_script.sh`
-
-This script will take a long time to complete as it is downloading a bunch of dependencies and installing them.
+This script will take a long time to complete (10~ mins on Intel i3 6100) as it is downloading a bunch of dependencies and installing them.
 
 ### Known Issues
 
-You might have some problem with make_banner.sh. If you do, delete the content of both make_banner.sh and banner.h and type run the script again using `./kos_setup_script.sh`
+You might have some problem with `make_banner.sh`. If you do, delete the content of both `make_banner.sh` and `banner.h` and type run the script again using `./kos_setup_script.sh`
 
 
 ### Compiling done.
@@ -30,8 +28,13 @@ When you start a new shell, please type -source /opt/toolchains/dc/kos/environ.s
 
 Your DC toolchain should now be at `/opt/toolchains/dc`, so making a link or an alias to get there fast would be useful.
 
-You can make an alias to access your KOS folder using
-
-`alias Dreamcast="cd /opt/toolchains/dc/kos"`
+You can make an alias to access your KOS folder using `alias Dreamcast="cd /opt/toolchains/dc/kos"`
 
 This will allow you to type Dreamcast in your terminal to move directly into your toolchain folder. Of course you can change Dreamcast for whatever you like.
+
+### Source environ.sh
+
+In order for your toolchain to work properly, you'll need to source the `environ.sh` file. If you want to source it automatically, you can edit your `.bashrc` file using your favorite file editor and add
+`source /opt/toolchains/dc/kos/environ.sh` at the end of the file.
+
+Otherwise, just make sure you run `source /opt/toolchains/dc/kos/environ.sh` in the terminal where you'll be compiling your Dreamcast programs.
