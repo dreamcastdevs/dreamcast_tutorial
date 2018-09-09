@@ -1,5 +1,5 @@
 # Dreamcast Tutorials
-For anyone who wants to learn the basic of Dreamcast programming
+For anyone who wants to learn the basic of Dreamcast programming.
 
 ### Content table
 1. Dreamcast 101
@@ -7,6 +7,6 @@ For anyone who wants to learn the basic of Dreamcast programming
 3. Drawing something on the screen using GLdc
 4. Basic interactions
 5. Playing sound
-6. VMU i/o
+6. VMU I/O
 7. Asset management (conversion tool, romdisk, etc)
 8. Making CDs (cdi, iso, etc)
