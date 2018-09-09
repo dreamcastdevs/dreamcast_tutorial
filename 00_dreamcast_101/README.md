@@ -17,7 +17,7 @@ Also, I've been succesfully working with LUA within my C code. I might include a
 
 There are many way to test your code. The easiest is to run it in a emulator, this being said, you might run into some strange behaviors once you get your code running on console. There is a `makeCD.sh` script included that will transform your programs into .CDI. These .CDI will work wonderfully with redream or lxdream but won't work if you burn them. More on that later.
 
-There will also be a 
+There will also be a tutorial to get your code on your machine using DC-IP-LOAD
 
 ### PVR (graphic chip) info
 
