@@ -19,14 +19,8 @@ You might have some problem with `make_banner.sh`. If you do, delete the content
 
 When KOS is fully compiled, it should open a web browser and print this message in the terminal :
 
-` Welcome to KOS!
-
-Please check out the example in /opt/toolchains/dc/kos/examples/dreamcast/kgl/nehe/nehe02 to get started.
-
-After editing main.c, type "make" to create an ELF executable. Run it using an emulator.
-KOS documentation is at http://gamedev.allusion.net/docs/kos-current.
-
-When you start a new shell, please type -source /opt/toolchains/dc/kos/environ.sh- in order to set the environment variables.
+` Welcome to KOS! Please check out the example in /opt/toolchains/dc/kos/examples/dreamcast/kgl/nehe/nehe02 to get started. After editing main.c, type "make" to create an ELF executable. Run it using an emulator.
+KOS documentation is at http://gamedev.allusion.net/docs/kos-current. When you start a new shell, please type -source /opt/toolchains/dc/kos/environ.sh- in order to set the environment variables.
 `
 
 Your DC toolchain should now be at `/opt/toolchains/dc`, so making a link or an alias to get there faster would be useful.
@@ -47,11 +41,9 @@ You can test that your eviron file is source by running `echo $KOS_BASE` and get
 ### Compile an example!
 Let's try to compile the Hello World exemple.
 
-`cd /opt/toolchains/dc/kos/examples/dreamcast/hello`
+`cd /opt/toolchains/dc/kos/examples/dreamcast/hello` and run `make`
 
-and run `make`
-
-you should get something like this
+You should get something like this :
 
 `rm -f hello.elf romdisk.*
 kos-cc  -c hello.c -o hello.o
