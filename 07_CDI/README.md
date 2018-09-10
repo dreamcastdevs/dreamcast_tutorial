@@ -1,4 +1,4 @@
 # CDI + Packaging
-
 Explain makeCD.sh!
-(IP.BIN ref)[http://mc.pp.se/dc/ip.bin.html]
+
+[IP.BIN ref](http://mc.pp.se/dc/ip.bin.html)
