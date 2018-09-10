@@ -23,4 +23,8 @@ There will also be a tutorial to get your code on your machine using DC-IP-LOAD
 
 ### PVR (graphic chip) info
 
+Coming soon
+
 ### Sound chip
+
+Coming soon
