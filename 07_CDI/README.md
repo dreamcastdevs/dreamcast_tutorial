@@ -1,4 +1,5 @@
 # CDI + Packaging
+<<<<<<< HEAD
 
 Please take a look at `makeCD.sh`. It's simple script that I made that will create a self-bootable .CDI file and run in in your favorite emulator (or console!)
 
@@ -26,3 +27,8 @@ I've included a copy of `IP.BIN` in this folder
 ### dc-load-ip
 
 [dc-load-ip](https://github.com/thentenaar/dc-load-ip) is a tool used to send your games into your dreamcast.
+=======
+Explain makeCD.sh!
+
+[IP.BIN ref](http://mc.pp.se/dc/ip.bin.html)
+>>>>>>> cde00e41e007b5f62e328df745b00bd56e6d3721
