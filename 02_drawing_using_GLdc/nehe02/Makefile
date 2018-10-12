@@ -1,4 +1,4 @@
-TARGET = nehe02.elf
+TARGET = main.elf
 OBJS = main.o
 
 all: rm-elf $(TARGET)

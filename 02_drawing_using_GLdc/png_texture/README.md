@@ -1,17 +1,22 @@
-# Drawing using GLDC
+### What to look for
 
-[Kazade's GLdc](https://github.com/Kazade/GLdc) is a openGL implementation for the Dreamcast that is actively developed.
+There's a new file called `gl_png.c`. It's a simplified version of what I use for [Reaperi Cycle](https://github.com/lerabot/reaperi_cycle). Keep in mind that this drawing code was written for a 2D engine.
 
-Make sure you clone this repo in the `addons` folder
+There's 2 functions in there.
 
-`cd /opt/toolchains/dc/kos/addons`
+`png_to_gl_texture` takes a texture pointer and a path to a .png file.
+`draw_textured_rect` which does exactly that. takes a texture pointer and x,y,z coordinates.
 
-`git clone https://github.com/Kazade/GLdc.git`
+It's a very simplified version. There are no scaling, rotating, coloring or anything set in place, but it should be simple enough for you to figure out.
 
-### Building GLDC
+You can easily change `png_to_gl_texture` path and add your own image to the romdisk folder.
 
-Once the folder is cloned
+Images need to be in pow2 (32x32, 64x64, 128x128, up to 1024x1024). You could technically go higher but not with the png color formats.
 
-`cd GLdc && make defaultall && make create_kos_link`
+### Compile
 
-You can now link GLdc using -lGLdc
+Simply use `make`
+
+### Run
+
+`lxdream main.elf`
