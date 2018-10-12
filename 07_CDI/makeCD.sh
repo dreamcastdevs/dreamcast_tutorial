@@ -1,5 +1,7 @@
 #! /bin/sh
 #automating script for making CD games
+# you'll need a build folder in this directory for this to work.
+
 
 DIR=$PWD
 PROJECT_NAME="project_name"
@@ -7,7 +9,7 @@ TARGET="main.elf"
 
 # go to build directory
 # make clean
-#make
+make
 
 #elf transform ---- make sure the *.elf name matches your .elf file.
 sh-elf-objcopy -R .stack -O binary $TARGET output.bin
@@ -29,4 +31,3 @@ sudo arp -s 192.168.0.99 00:d0:f1:03:14:02
 #lxdream ../$PROJECT_NAME.iso
 #reicast ../$PROJECT_NAME.cdi
 redream builds/$PROJECT_NAME.cdi
- mine

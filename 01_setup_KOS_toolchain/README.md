@@ -1,12 +1,12 @@
 # How to compile the KOS toolchain
-
 *The following has been tested under Linux Mint 18 on 9/9/2018*
 
-First, you need to `chmod` the `kos_setup_script.sh` file.
+## 01_setup_KOS_toolchain
 
-In a terminal, type `chmod +x kos_setup_script.sh`
+First, navigate toward the folder `01_setup_KOS_toolchain`.
+In order to execute the script, you'll neet to set the execute flag on `kos_setup_script.sh`.
 
-then run the script it using `./kos_setup_script.sh`
+In a terminal, type `chmod +x kos_setup_script.sh` then run it using `./kos_setup_script.sh`
 
 This script will take a long time to complete (10~ mins on Intel i3 6100) as it is downloading a bunch of dependencies and installing them.
 
@@ -22,13 +22,6 @@ When KOS is fully compiled, it should open a web browser and print this message 
 ` Welcome to KOS! Please check out the example in /opt/toolchains/dc/kos/examples/dreamcast/kgl/nehe/nehe02 to get started. After editing main.c, type "make" to create an ELF executable. Run it using an emulator.
 KOS documentation is at http://gamedev.allusion.net/docs/kos-current. When you start a new shell, please type -source /opt/toolchains/dc/kos/environ.sh- in order to set the environment variables.
 `
-
-Your DC toolchain should now be at `/opt/toolchains/dc`, so making a link or an alias to get there faster would be useful.
-
-You can make an alias to access your KOS folder using `alias Dreamcast="cd /opt/toolchains/dc/kos"`
-
-This will allow you to type `Dreamcast` in your terminal to move directly into your toolchain folder. Of course you can change Dreamcast for whatever you like.
-
 ### Source environ.sh
 
 In order for your toolchain to work properly, you'll need to source the `environ.sh` file. If you want to source it automatically, you can edit your `.bashrc` file using your favorite file editor and add
@@ -36,12 +29,12 @@ In order for your toolchain to work properly, you'll need to source the `environ
 
 Otherwise, just make sure you run `source /opt/toolchains/dc/kos/environ.sh` in the terminal where you'll be compiling your Dreamcast programs.
 
-You can test that your eviron file is source by running `echo $KOS_BASE` and getting your KOS path in the terminal.
+You can test that your environ file is source by running `echo $KOS_BASE` and getting your KOS path in the terminal. You can also move to the KOS folder by typing `cd $KOS_BASE`.
 
 ### Compile an example!
 Let's try to compile the Hello World exemple.
 
-`cd /opt/toolchains/dc/kos/examples/dreamcast/hello` and run `make`
+`cd $KOS_BASE/examples/dreamcast/hello` and run `make`
 
 You should get something like this :
 
