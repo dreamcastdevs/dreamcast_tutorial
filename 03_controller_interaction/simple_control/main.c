@@ -22,7 +22,7 @@ float speed = 0.3f;                             //movement speed
 
 void drawRect(float x, float y) {
   glPushMatrix();
-  glTranslatef(x, y,-20.0f);        //Translate the rect to X & Y
+  glTranslatef(x, y,-30.0f);        //Translate the rect to X & Y
   glRotatef(rot, 0.0f, 0.0f, 1.0f); //Rotate around the Z axis
   glBegin(GL_QUADS);				        //Start drawing a polygon (4 sided)
   glColor3f(col[0], col[1], col[2]);//

@@ -1,5 +1,5 @@
 TARGET = main.elf
-OBJS = main.o
+OBJS = main.o gl_png.o
 KOS_CFLAGS += -std=c99
 
 all: rm-elf $(TARGET)
@@ -14,7 +14,7 @@ rm-elf:
 
 $(TARGET): $(OBJS) romdisk.o
 	$(KOS_CC) $(KOS_CFLAGS) $(KOS_LDFLAGS) -o $(TARGET) $(KOS_START) \
-		$(OBJS) romdisk.o $(KOS_LIBS) -lGLdc -lm 
+		$(OBJS) romdisk.o -lpng -lz -lGLdc -lm $(KOS_LIBS) 
 
 romdisk.img:
 	$(KOS_GENROMFS) -f romdisk.img -d romdisk -v
