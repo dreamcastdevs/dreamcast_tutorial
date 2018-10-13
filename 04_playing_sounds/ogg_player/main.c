@@ -1,8 +1,6 @@
 /******************************************************
 This is inspired by the sample in the libogg
 
-This uses Kazade's GLdc and some part of his NeHe example.
-
 Author: lerabot/magnes
 Date  : 12/10/2018
 *****************************************************/
@@ -10,7 +8,7 @@ Date  : 12/10/2018
 #include <stdint.h>
 #include <oggvorbis/sndoggvorbis.h>
 
-extern uint8    romdisk[]; //Create a romsick pointer
+extern uint8    romdisk[]; //Create a romdisk pointer
 KOS_INIT_ROMDISK(romdisk); //Init. the romdisk. Everything in the romdisk folder is now located at /rd/ on your DC.
 
 uint32_t p_buttons;       //Saves the previous button states
@@ -25,8 +23,8 @@ int buttonPressed(cont_state_t *state, uint16 key) {
 }
 
 int main() {
-  maple_device_t  *cont;     //controller
-  cont_state_t    *state;    //state of inputs
+  maple_device_t  *cont;     //Controller
+  cont_state_t    *state;    //State of inputs
 
   snd_stream_init();        //Init the SND_Stream which allow to stream audio from long audio source.
   sndoggvorbis_init();      //Init the OggVorbis streams.
@@ -34,7 +32,7 @@ int main() {
   int new_volume = 150;
 
   //You only need to call the start function once. This will play your song.
-  sndoggvorbis_start("/rd/test.ogg", 1); //plays the sound source, 1 is loop.
+  sndoggvorbis_start("/rd/test.ogg", 1); //Plays the sound source, 1 is loop.
 
 
   while(1) {
