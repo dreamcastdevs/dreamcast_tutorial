@@ -13,10 +13,8 @@ You can easily change `png_to_gl_texture` path and add your own image to the rom
 
 Images need to be in pow2 (32x32, 64x64, 128x128, up to 1024x1024). You could technically go higher but not with the png color formats.
 
-### Compile
+### Makefile
 
 Simply use `make`
 
-### Run
-
-`lxdream main.elf`
+Run in lxdream using `make run`

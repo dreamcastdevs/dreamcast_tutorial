@@ -64,6 +64,6 @@ int main() {
 
     p_buttons &= state->buttons;  //This operation will set p_buttons as the latest changes in states.
   }
-  sndoggvorbis_shutdown()
+  sndoggvorbis_shutdown();
   return(0);
 }

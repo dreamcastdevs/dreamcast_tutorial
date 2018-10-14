@@ -1,6 +1,13 @@
-#include "gl.h"
-#include "glu.h"
-#include "glkos.h"
+/******************************************************
+Intro to GLdc using basic Quads/Triangle with glBegin() and glEnd()
+
+Author: kazade
+Date  : 09/09/2018
+*****************************************************/
+
+#include <GL/gl.h>
+#include <GL/glkos.h>
+#include <GL/glu.h>
 
 /* A general OpenGL initialization function.  Sets all of the initial parameters. */
 void InitGL(int Width, int Height)	        // We call this right after our OpenGL window is created.
@@ -19,22 +26,6 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
     glMatrixMode(GL_MODELVIEW);
 }
 
-/* The function called when our window is resized (which shouldn't happen, because we're fullscreen) */
-void ReSizeGLScene(int Width, int Height)
-{
-    if (Height == 0)				// Prevent A Divide By Zero If The Window Is Too Small
-        Height = 1;
-
-    glViewport(0, 0, Width, Height);		// Reset The Current Viewport And Perspective Transformation
-
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-
-    gluPerspective(45.0f,(GLfloat)Width/(GLfloat)Height,0.1f,100.0f);
-    glMatrixMode(GL_MODELVIEW);
-}
-
-
 /* The main drawing function. */
 void DrawGLScene()
 {
@@ -43,33 +34,36 @@ void DrawGLScene()
 
     glTranslatef(-1.5f,0.0f,-6.0f);		// Move Left 1.5 Units And Into The Screen 6.0
 
-    // draw a triangle
-    glBegin(GL_POLYGON);				// start drawing a polygon
+    // Draw a triangle
+    glBegin(GL_POLYGON);				      // Start drawing a polygon
+    glColor3f(  1.0f, 1.0f, 1.0f);    // Set the polygon color
     glVertex3f( 0.0f, 1.0f, 0.0f);		// Top
     glVertex3f( 1.0f,-1.0f, 0.0f);		// Bottom Right
     glVertex3f(-1.0f,-1.0f, 0.0f);		// Bottom Left
-    glEnd();					// we're done with the polygon
+    glEnd();					                // Done with the polygon
 
-    glTranslatef(3.0f,0.0f,0.0f);		        // Move Right 3 Units
+    glTranslatef(3.0f,0.0f,0.0f);		  // Move Right 3 Units
 
-    // draw a square (quadrilateral)
-    glBegin(GL_QUADS);				// start drawing a polygon (4 sided)
+    // Draw a quad (quadrilateral)
+    glBegin(GL_QUADS);				        // Start drawing a polygon (4 sided)
+    glColor3f(  0.0f, 1.0f, 0.0f);    // Set the polygon color
     glVertex3f(-1.0f, 1.0f, 0.0f);		// Top Left
+    glColor3f(  0.0f, 1.0f, 1.0f);    // Set the polygon color
     glVertex3f( 1.0f, 1.0f, 0.0f);		// Top Right
+    glColor3f(  0.5f, 0.0f, 0.7f);    // Set the polygon color
     glVertex3f( 1.0f,-1.0f, 0.0f);		// Bottom Right
+    glColor3f(  0.0f, 0.4f, 0.9f);    // Set the polygon color
     glVertex3f(-1.0f,-1.0f, 0.0f);		// Bottom Left
-    glEnd();					// done with the polygon
+    glEnd();					                // Done with the polygon
 
-    // swap buffers to display, since we're double buffered.
+    // Swap buffers to display, since we're double buffered.
     glKosSwapBuffers();
 }
 
 int main(int argc, char **argv)
 {
-    glKosInit();
-
-    InitGL(640, 480);
-    ReSizeGLScene(640, 480);
+    glKosInit();              //Mandatory function to start KOS and set some GL params
+    InitGL(640, 480);         //Create a "window" at the DC resolution
 
     while(1) {
         DrawGLScene();

@@ -22,7 +22,7 @@ romdisk.o: romdisk.img
 	$(KOS_BASE)/utils/bin2o/bin2o romdisk.img romdisk romdisk.o
 
 run: $(TARGET)
-	$(KOS_LOADER) $(TARGET)
+	lxdream $(TARGET)
 
 dist:
 	rm -f $(OBJS) romdisk.o romdisk.img

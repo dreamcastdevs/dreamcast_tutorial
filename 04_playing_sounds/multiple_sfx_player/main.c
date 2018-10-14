@@ -8,7 +8,7 @@ Date  : 09/09/2018
 #include <stdio.h>
 #include <stdlib.h>
 
-extern uint8      romdisk[]; //Create a romsick pointer
+extern uint8      romdisk[]; //Create a romdisk pointer
 KOS_INIT_ROMDISK  (romdisk); //Init. the romdisk. Everything in the romdisk folder is now located at /rd/ on your DC.
 uint32_t          p_buttons;  //Saves the previous button states
 
@@ -22,17 +22,17 @@ int buttonPressed(cont_state_t *state, uint16 key) {
 }
 
 int main() {
-  maple_device_t  *cont;     //controller
-  cont_state_t    *state;    //state of inputs
+  maple_device_t  *cont;     //Controller
+  cont_state_t    *state;    //State of inputs
 
   while(1) {
 
-    // Refresh the controller data
+    //Refresh the controller data
     cont = maple_enum_type(0, MAPLE_FUNC_CONTROLLER);
-    // Check key status
+    //Check key status
     state = (cont_state_t *)maple_dev_status(cont);
 
-    // If the state/controller is unavailable
+    //If the state/controller is unavailable
     if(!state) {
         printf("Error reading controller\n");
         break;

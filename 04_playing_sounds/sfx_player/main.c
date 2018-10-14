@@ -6,9 +6,8 @@ made by Protofall with some minor changes by lerabot.
 #include <kos.h>
 #include <stdint.h>
 
-// Romdisk
-extern uint8 romdisk[];
-KOS_INIT_ROMDISK(romdisk);
+extern uint8      romdisk[]; //Create a romdisk pointer
+KOS_INIT_ROMDISK  (romdisk); //Init. the romdisk. Everything in the romdisk folder is now located at /rd/ on your DC.
 
 //Check if check_button was just released (Unused)
 uint8_t button_released(cont_state_t *st, uint32_t check_button, uint32_t changed_buttons){
@@ -55,7 +54,7 @@ int main(){
 		changed_buttons = current_state->buttons ^ previous_buttons;
 
 		if(current_state != NULL && button_pressed(current_state, CONT_A, changed_buttons)){	//When the "A" button is pressed, play the sound
-			snd_sfx_play(sound1, 127, 128);    // ~50% volume, pan centred
+			snd_sfx_play(sound1, 127, 128);    //~50% volume, pan centred
 		}
 
 		previous_buttons = current_state->buttons;

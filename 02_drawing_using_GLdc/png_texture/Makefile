@@ -14,7 +14,7 @@ rm-elf:
 
 $(TARGET): $(OBJS) romdisk.o
 	$(KOS_CC) $(KOS_CFLAGS) $(KOS_LDFLAGS) -o $(TARGET) $(KOS_START) \
-		$(OBJS) romdisk.o -lpng -lz -lGLdc -lm $(KOS_LIBS) 
+		$(OBJS) romdisk.o -lpng -lz -lGLdc -lm $(KOS_LIBS)
 
 romdisk.img:
 	$(KOS_GENROMFS) -f romdisk.img -d romdisk -v
@@ -23,7 +23,7 @@ romdisk.o: romdisk.img
 	$(KOS_BASE)/utils/bin2o/bin2o romdisk.img romdisk romdisk.o
 
 run: $(TARGET)
-	$(KOS_LOADER) $(TARGET)
+	lxdream $(TARGET)
 
 dist:
 	rm -f $(OBJS) romdisk.o romdisk.img

@@ -17,7 +17,8 @@ Date  : 12/10/2018
 
 extern uint8    romdisk[]; //Create a romsick pointer
 KOS_INIT_ROMDISK(romdisk); //Init. the romdisk. Everything in the romdisk folder is now located at /rd/ on your DC.
-texture t1;
+
+texture t1;               //This will hold at the data for our texture. Located in gl_png.h
 
 /* A general OpenGL initialization function.  Sets all of the initial parameters. */
 void InitGL(int Width, int Height)	        // We call this right after our OpenGL window is created.
@@ -29,19 +30,20 @@ void InitGL(int Width, int Height)	        // We call this right after our OpenG
     glShadeModel(GL_SMOOTH);			          // Enables Smooth Color Shading
 
     glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();				// Reset The Projection Matrix
+    glLoadIdentity();				                // Reset The Projection Matrix
     gluPerspective(45.0f,(GLfloat)Width/(GLfloat)Height,0.1f,100.0f);	// Calculate The Aspect Ratio Of The Window
 
     glMatrixMode(GL_MODELVIEW);
 }
 
 int main() {
-  maple_device_t  *cont;     //controller
-  cont_state_t    *state;    //state of inputs
+  maple_device_t  *cont;     //Controller
+  cont_state_t    *state;    //State of inputs
 
   glKosInit();              //Mandatory function to start KOS and set some GL params
   InitGL(640, 480);         //Create a "window" at the DC resolution
 
+  //This function is in gl_png.c
   png_to_gl_texture(&t1, "/rd/controller.png"); //This function will load a PNG file into a texture <-------------------
 
   float angle = 0.0f;

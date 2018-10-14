@@ -1,6 +1,5 @@
 /******************************************************
-This is a simple exemple to learn
-how to use the controller inputs.
+This is a simple exemple to learn how to use the controller inputs.
 
 This uses Kazade's GLdc and some part of his NeHe example.
 
