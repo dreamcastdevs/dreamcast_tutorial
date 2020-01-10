@@ -1,12 +1,12 @@
 # Drawing using GLDC
 
-[GLdc](https://github.com/Kazade/GLdc) is a openGL implementation for the Dreamcast that is actively developed by Kazade.
+[GLdc](https://gitlab.com/simulant/GLdc) is a openGL implementation for the Dreamcast that is actively developed by Kazade.
 
 **!! Make sure you clone this repo in the `addons` folder !!**
 
 `cd /opt/toolchains/dc/kos/addons`
 
-`git clone https://github.com/Kazade/GLdc.git`
+`git clone https://gitlab.com/simulant/GLdc.gitt`
 
 ### Building GLDC
 
